@@ -33,6 +33,7 @@ export default function({
         controls.reset();
         timer.stopCountdown();
         timer.updateDisplay();
+        sounds.pauseBgAudio();
     })
     
     increaseButton.addEventListener('click', () => {
@@ -45,7 +46,7 @@ export default function({
     
     decreaseButton.addEventListener('click', () => {
         sounds.buttonPressed();
-        
+
         let minutes = Number(minutesDisplay.textContent);
     
         if((minutes - 5) <= 0 && minutes > 0)

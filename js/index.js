@@ -15,13 +15,14 @@ const controls = Controls({
     pauseButton
 });
 
+const sounds = Sounds();
+
 const timer = Timer({
     controls,
+    sounds,
     minutesDisplay,
     secondsDisplay
 })
-
-const sounds = Sounds();
 
 Events({
     controls,

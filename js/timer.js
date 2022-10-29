@@ -1,7 +1,6 @@
-import Sounds from './sounds.js'
-
 export default function({
     controls,
+    sounds,
     minutesDisplay,
     secondsDisplay
 })
@@ -18,7 +17,8 @@ export default function({
     
             if(isFinished)
             {
-                Sounds().timerEnds();
+                sounds.timerEnds();
+                sounds.pauseBgAudio();
                 updateDisplay();
                 controls.reset();
                 return
