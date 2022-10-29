@@ -25,6 +25,12 @@ button
     background: none;
     border: none;
     cursor: pointer;
+    transition: transform .2s;
+}
+
+button:hover
+{
+    transform: scale(1.1);
 }
 
 button svg path
@@ -53,6 +59,7 @@ main
 .time
 {
     display: flex;
+    justify-content: space-between;
     font-size: 12.6rem;
     line-height: 14.8rem;
 }
@@ -60,7 +67,9 @@ main
 .controls
 {
     display: flex;
-    gap: 4rem;
+    justify-content: space-between;
+    box-sizing: content-box;
+    padding: 1rem;
 }
 
 .sounds
