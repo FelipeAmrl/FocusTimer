@@ -1,14 +1,18 @@
 export default function()
 {
 
-    const buttonPressedAudio = new Audio();
-    const kitchenTimer = new Audio();
+    const buttonPressedAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true");
+    const kitchenTimer = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true");
     const bgAudio = {
-        forest: new Audio(),
-        rain: new Audio(),
-        coffee: new Audio(),
-        fireplace: new Audio()
+        forest: new Audio("./assets/forest.wav"),
+        rain: new Audio("./assets/rain.wav"),
+        coffee: new Audio("./assets/coffee-house.wav"),
+        fireplace: new Audio("./assets/fireplace.wav")
     }
+    bgAudio.forest.loop = true;
+    bgAudio.rain.loop = true;
+    bgAudio.coffee.loop = true;
+    bgAudio.fireplace.loop = true;
 
     function buttonPressed()
     {
@@ -22,16 +26,31 @@ export default function()
 
     function playBgAudio(type)
     {
-        bgAudio.type.play();
-        bgAudio.type.loop = true;
+        switch(type)
+        {
+            case "forest":
+                bgAudio.forest.play();
+                break;
+            case "rain":
+                bgAudio.rain.play();
+                break;
+            case "coffee":
+                bgAudio.coffee.play();
+                break;
+            case "fireplace":
+                bgAudio.fireplace.play();
+                break;
+            default:
+                break;
+        }
     }
 
     function pauseBgAudio()
     {
-        for(let audio in bgAudio)
-        {
-            audio.pause();
-        }
+        bgAudio.forest.pause();
+        bgAudio.rain.pause();
+        bgAudio.coffee.pause();
+        bgAudio.fireplace.pause();
     }
 
     return {

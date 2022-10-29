@@ -5,6 +5,12 @@ const pauseButton = document.querySelector(".pause");
 const stopButton = document.querySelector(".stop");
 const increaseButton = document.querySelector(".increase");
 const decreaseButton = document.querySelector(".decrease");
+const forestSoundButton = document.querySelector(".forest");
+const rainSoundButton = document.querySelector(".rain");
+const coffeeSoundButton = document.querySelector(".coffee");
+const fireplaceSoundButton = document.querySelector(".fireplace");
+
+
 
 export {
     minutesDisplay,
@@ -13,5 +19,9 @@ export {
     pauseButton,
     stopButton,
     increaseButton,
-    decreaseButton
+    decreaseButton,
+    forestSoundButton,
+    coffeeSoundButton,
+    rainSoundButton,
+    fireplaceSoundButton
 }
