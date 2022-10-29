@@ -1,0 +1,79 @@
+* 
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root
+{
+    font-size: 62.5%;
+
+    --bg-color: hsl(0, 0, 100%);
+    --bg-button: hsl(240, 9%, 89%);
+    --bg-button-focus: hsl(194, 97%, 31%);
+    --primary-color: hsla(240, 6%, 21%, 1);
+}
+
+.hide
+{
+    display: none;
+}
+
+button
+{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button svg path
+{
+    fill: var(--primary-color);
+}
+
+body
+{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: var(--primary-color);
+    height: 100vh;
+}
+
+main
+{
+    display: flex;
+    align-items: center;
+    max-width: 82.1rem;
+    gap: 19.5rem;
+    padding-top: 19.6rem;
+    margin-inline: auto;
+}
+
+.time
+{
+    display: flex;
+    font-size: 12.6rem;
+    line-height: 14.8rem;
+}
+
+.controls
+{
+    display: flex;
+    gap: 4rem;
+}
+
+.sounds
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.2rem;
+}
+
+.sounds button
+{
+    width: 13.8rem;
+    height: 15.2rem;
+    background-color: var(--bg-button);
+    border-radius: 2.4rem;
+}
