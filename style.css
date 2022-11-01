@@ -9,7 +9,7 @@
 {
     font-size: 62.5%;
 
-    --bg-color: hsl(0, 0, 100%);
+    --bg-color: hsl(0, 0%, 100%);
     --bg-button: hsl(240, 9%, 89%);
     --bg-button-focus: hsl(194, 97%, 31%);
     --primary-color: hsla(240, 6%, 21%, 1);
@@ -25,7 +25,7 @@ button
     background: none;
     border: none;
     cursor: pointer;
-    transition: transform .2s;
+    transition: all .3s;
 }
 
 button:hover
@@ -40,10 +40,12 @@ button svg path
 
 body
 {
+    background-color: var(--bg-color);
+    height: 100vh;
+
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: var(--primary-color);
-    height: 100vh;
 }
 
 main
@@ -85,4 +87,14 @@ main
     height: 15.2rem;
     background-color: var(--bg-button);
     border-radius: 2.4rem;
+}
+
+.sounds .selected
+{
+    background-color: var(--bg-button-focus);
+}
+
+.selected svg path
+{
+    fill: var(--bg-color);
 }

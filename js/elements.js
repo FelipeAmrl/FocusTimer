@@ -10,8 +10,6 @@ const rainSoundButton = document.querySelector(".rain");
 const coffeeSoundButton = document.querySelector(".coffee");
 const fireplaceSoundButton = document.querySelector(".fireplace");
 
-
-
 export {
     minutesDisplay,
     secondsDisplay,

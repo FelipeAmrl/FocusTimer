@@ -33,7 +33,6 @@ export default function({
         controls.reset();
         timer.stopCountdown();
         timer.updateDisplay();
-        sounds.pauseBgAudio();
     })
     
     increaseButton.addEventListener('click', () => {
@@ -63,22 +62,22 @@ export default function({
     })
 
     forestSoundButton.addEventListener('click', () => {
-        sounds.pauseBgAudio();
-        sounds.playBgAudio("forest");
+        controls.toggleBgAudioButtonSelection(forestSoundButton);
+        sounds.handleBgAudio(forestSoundButton, "forest");
     })
 
     rainSoundButton.addEventListener('click', () => {
-        sounds.pauseBgAudio();
-        sounds.playBgAudio("rain");
+        controls.toggleBgAudioButtonSelection(rainSoundButton);
+        sounds.handleBgAudio(rainSoundButton, "rain");
     })
 
     coffeeSoundButton.addEventListener('click', () => {
-        sounds.pauseBgAudio();
-        sounds.playBgAudio("coffee");
+        controls.toggleBgAudioButtonSelection(coffeeSoundButton);
+        sounds.handleBgAudio(coffeeSoundButton, "coffee");
     })
 
     fireplaceSoundButton.addEventListener('click', () => {
-        sounds.pauseBgAudio();
-        sounds.playBgAudio("fireplace");
+        controls.toggleBgAudioButtonSelection(fireplaceSoundButton);
+        sounds.handleBgAudio(fireplaceSoundButton, "fireplace");
     })
 }

@@ -9,6 +9,7 @@ export default function()
         coffee: new Audio("./assets/coffee-house.wav"),
         fireplace: new Audio("./assets/fireplace.wav")
     }
+
     bgAudio.forest.loop = true;
     bgAudio.rain.loop = true;
     bgAudio.coffee.loop = true;
@@ -45,18 +46,46 @@ export default function()
         }
     }
 
-    function pauseBgAudio()
+    function pauseBgAudio(type)
     {
-        bgAudio.forest.pause();
-        bgAudio.rain.pause();
-        bgAudio.coffee.pause();
-        bgAudio.fireplace.pause();
+        switch(type)
+        {
+            case "forest":
+                bgAudio.forest.pause();
+                break;
+            case "rain":
+                bgAudio.rain.pause();
+                break;
+            case "coffee":
+                bgAudio.coffee.pause();
+                break;
+            case "fireplace":
+                bgAudio.fireplace.pause();
+                break;
+            default:
+                break;
+        }
+    }
+
+    function handleBgAudio(element, type)
+    {
+        let isSelected = element.classList.contains('selected');
+
+        if(isSelected)
+        {
+            playBgAudio(type);
+        }
+        else
+        {
+            pauseBgAudio(type);
+        }
     }
 
     return {
         buttonPressed,
         timerEnds,
         playBgAudio,
-        pauseBgAudio
+        pauseBgAudio,
+        handleBgAudio
     }
 }

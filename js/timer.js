@@ -18,7 +18,6 @@ export default function({
             if(isFinished)
             {
                 sounds.timerEnds();
-                sounds.pauseBgAudio();
                 updateDisplay();
                 controls.reset();
                 return

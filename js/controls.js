@@ -15,8 +15,14 @@ export default function ({
         pauseButton.classList.add('hide');
     }
 
+    function toggleBgAudioButtonSelection(element)
+    {
+        element.classList.toggle('selected');
+    }
+
     return {
         play,
-        reset
+        reset,
+        toggleBgAudioButtonSelection
     }
 }
