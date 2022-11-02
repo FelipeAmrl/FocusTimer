@@ -107,8 +107,15 @@ main
 
 .sounds button
 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.2rem;
+
     width: 13.8rem;
     height: 15.2rem;
+
     background-color: var(--bg-button);
     border-radius: 2.4rem;
 }
@@ -131,4 +138,31 @@ main
 .selected svg path
 {
     fill: var(--bg-color);
+}
+
+input.volume-control
+{
+    appearance: none;
+    width: 65%;
+    height: .4rem;
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+}
+
+input.volume-control::-webkit-slider-thumb {
+    appearance: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+input.volume-control::-moz-range-thumb {
+    width: 1.6rem;
+    height: 1.6rem;
+    background: white;
+    cursor: pointer; 
+    border-radius: 50%;
 }
