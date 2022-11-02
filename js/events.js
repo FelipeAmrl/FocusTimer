@@ -9,6 +9,10 @@ import {
     coffeeSoundButton,
     rainSoundButton,
     fireplaceSoundButton,
+    forestVolume,
+    rainVolume,
+    coffeeVolume,
+    fireplaceVolume,
     darkModeButton,
     lightModeButton
 } from './elements.js'
@@ -64,23 +68,75 @@ export default function({
     })
 
     forestSoundButton.addEventListener('click', () => {
+        if(sounds.volumeHasChanged)
+        {
+            sounds.volumeHasChanged = false;
+            return;
+        }
+        
+        sounds.resetBgAudioVolume("forest");
         controls.toggleBgAudioButtonSelection(forestSoundButton);
         sounds.handleBgAudio(forestSoundButton, "forest");
     })
 
     rainSoundButton.addEventListener('click', () => {
+        if(sounds.volumeHasChanged)
+        {
+            sounds.volumeHasChanged = false;
+            return;
+        }
+
+        sounds.resetBgAudioVolume("rain");
         controls.toggleBgAudioButtonSelection(rainSoundButton);
         sounds.handleBgAudio(rainSoundButton, "rain");
     })
 
     coffeeSoundButton.addEventListener('click', () => {
+        if(sounds.volumeHasChanged)
+        {
+            sounds.volumeHasChanged = false;
+            return;
+        }
+        
+        sounds.resetBgAudioVolume("coffee");
         controls.toggleBgAudioButtonSelection(coffeeSoundButton);
         sounds.handleBgAudio(coffeeSoundButton, "coffee");
     })
 
     fireplaceSoundButton.addEventListener('click', () => {
+        if(sounds.volumeHasChanged)
+        {
+            sounds.volumeHasChanged = false;
+            return;
+        }
+        
+        sounds.resetBgAudioVolume("fireplace");
         controls.toggleBgAudioButtonSelection(fireplaceSoundButton);
         sounds.handleBgAudio(fireplaceSoundButton, "fireplace");
+    })
+
+    forestVolume.addEventListener('input', (event) => {
+        let forestSound = sounds.bgAudio.forest;
+        forestSound.volume = event.currentTarget.value / 100;
+        sounds.volumeHasChanged = true;
+    })
+
+    rainVolume.addEventListener('input', (event) => {
+        let rainSound = sounds.bgAudio.rain;
+        rainSound.volume = event.currentTarget.value / 100;
+        sounds.volumeHasChanged = true;
+    })
+
+    coffeeVolume.addEventListener('input', (event) => {
+        let coffeeSound = sounds.bgAudio.coffee;
+        coffeeSound.volume = event.currentTarget.value / 100;
+        sounds.volumeHasChanged = true;
+    })
+
+    fireplaceVolume.addEventListener('input', (event) => {
+        let fireplaceSound = sounds.bgAudio.fireplace;
+        fireplaceSound.volume = event.currentTarget.value / 100;
+        sounds.volumeHasChanged = true;
     })
 
     lightModeButton.addEventListener('click', () => {

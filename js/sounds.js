@@ -1,4 +1,9 @@
-export default function()
+export default function({
+    forestVolume,
+    rainVolume,
+    coffeeVolume,
+    fireplaceVolume,
+})
 {
 
     const buttonPressedAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true");
@@ -9,6 +14,8 @@ export default function()
         coffee: new Audio("./assets/coffee-house.wav"),
         fireplace: new Audio("./assets/fireplace.wav")
     }
+
+    let volumeHasChanged = false;
 
     bgAudio.forest.loop = true;
     bgAudio.rain.loop = true;
@@ -81,11 +88,38 @@ export default function()
         }
     }
 
+    function resetBgAudioVolume(type){
+        switch(type)
+        {
+            case "forest":
+                forestVolume.value = 50;
+                bgAudio.forest.volume = forestVolume.value / 100;
+                break;
+            case "rain":
+                rainVolume.value = 50;
+                bgAudio.rain.volume = rainVolume.value / 100;
+                break;
+            case "coffee":
+                coffeeVolume.value = 50;
+                bgAudio.coffee.volume = coffeeVolume.value / 100;
+                break;
+            case "fireplace":
+                fireplaceVolume.value = 50;
+                bgAudio.fireplace.volume = fireplaceVolume.value / 100;
+                break;
+            default:
+                break;
+        }
+    }
+
     return {
+        bgAudio,
+        volumeHasChanged,
         buttonPressed,
         timerEnds,
         playBgAudio,
         pauseBgAudio,
-        handleBgAudio
+        handleBgAudio,
+        resetBgAudioVolume
     }
 }

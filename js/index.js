@@ -9,6 +9,10 @@ import {
     secondsDisplay,
     playButton,
     pauseButton,
+    forestVolume,
+    rainVolume,
+    coffeeVolume,
+    fireplaceVolume,
     darkModeButton,
     lightModeButton
 } from './elements.js'
@@ -21,7 +25,12 @@ const controls = Controls({
     lightModeButton
 });
 
-const sounds = Sounds();
+const sounds = Sounds({
+    forestVolume,
+    rainVolume,
+    coffeeVolume,
+    fireplaceVolume,
+});
 
 const timer = Timer({
     controls,
