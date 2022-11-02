@@ -1,6 +1,9 @@
 export default function ({
+    body,
     playButton,
-    pauseButton
+    pauseButton,
+    darkModeButton,
+    lightModeButton
 }) 
 {
     function play()
@@ -20,9 +23,17 @@ export default function ({
         element.classList.toggle('selected');
     }
 
+    function changeColorMode()
+    {
+        body.classList.toggle('dark');
+        darkModeButton.classList.toggle('hide');
+        lightModeButton.classList.toggle('hide');
+    }
+
     return {
         play,
         reset,
-        toggleBgAudioButtonSelection
+        toggleBgAudioButtonSelection,
+        changeColorMode
     }
 }

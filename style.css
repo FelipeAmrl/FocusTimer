@@ -13,6 +13,11 @@
     --bg-button: hsl(240, 9%, 89%);
     --bg-button-focus: hsl(194, 97%, 31%);
     --primary-color: hsla(240, 6%, 21%, 1);
+
+    --primary-color-dark: hsl(240, 7%, 78%);
+    --bg-color-dark: hsl(240, 5%, 7%);
+    --bg-button-dark: hsl(240, 6%, 17%);
+    --bg-button-focus-dark: hsl(195, 74%, 15%);
 }
 
 .hide
@@ -38,14 +43,33 @@ button svg path
     fill: var(--primary-color);
 }
 
+.dark button svg path
+{
+    fill: var(--primary-color-dark);
+}
+
 body
 {
     background-color: var(--bg-color);
     height: 100vh;
+    position: relative;
 
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: var(--primary-color);
+}
+
+body.dark
+{
+    background-color: var(--bg-color-dark);
+    color: white;
+}
+
+.color-mode
+{
+    position: absolute;
+    top: 6rem;
+    right: 6rem;
 }
 
 main
@@ -89,9 +113,19 @@ main
     border-radius: 2.4rem;
 }
 
+.dark .sounds button
+{
+    background-color: var(--bg-button-dark);
+}
+
 .sounds .selected
 {
     background-color: var(--bg-button-focus);
+}
+
+.dark .sounds button.selected
+{
+    background-color: var(--bg-button-focus-dark);
 }
 
 .selected svg path

@@ -8,7 +8,9 @@ import {
     forestSoundButton,
     coffeeSoundButton,
     rainSoundButton,
-    fireplaceSoundButton
+    fireplaceSoundButton,
+    darkModeButton,
+    lightModeButton
 } from './elements.js'
 
 export default function({
@@ -79,5 +81,15 @@ export default function({
     fireplaceSoundButton.addEventListener('click', () => {
         controls.toggleBgAudioButtonSelection(fireplaceSoundButton);
         sounds.handleBgAudio(fireplaceSoundButton, "fireplace");
+    })
+
+    lightModeButton.addEventListener('click', () => {
+        sounds.buttonPressed();
+       controls.changeColorMode();
+    })
+
+    darkModeButton.addEventListener('click', () => {
+        sounds.buttonPressed();
+        controls.changeColorMode();
     })
 }

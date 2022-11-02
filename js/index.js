@@ -4,15 +4,21 @@ import Events from './events.js';
 import Sounds from './sounds.js';
 
 import {
+    body,
     minutesDisplay,
     secondsDisplay,
     playButton,
-    pauseButton
+    pauseButton,
+    darkModeButton,
+    lightModeButton
 } from './elements.js'
 
 const controls = Controls({
+    body,
     playButton,
-    pauseButton
+    pauseButton,
+    darkModeButton,
+    lightModeButton
 });
 
 const sounds = Sounds();
